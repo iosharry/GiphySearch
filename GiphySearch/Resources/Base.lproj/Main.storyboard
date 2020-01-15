@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cgf-LC-cyS">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Giphy Detail View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GiphyDetailViewController" customModule="GiphySearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oyC-g8-auI">
+                                <rect key="frame" x="180" y="180" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="2Oy-xU-0My"/>
+                                    <constraint firstAttribute="height" constant="240" id="Kvj-LT-Rj3"/>
+                                    <constraint firstAttribute="width" constant="240" id="i1M-mT-DDn"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9c-fc-WW9" customClass="FavoriteButton" customModule="GiphySearch" customModuleProvider="target">
+                                <rect key="frame" x="552" y="24" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="ceD-AN-htv"/>
+                                    <constraint firstAttribute="height" constant="24" id="em1-jf-mhJ"/>
+                                </constraints>
+                                <state key="normal" image="icHeart"/>
+                                <state key="selected" image="icHeartFill"/>
+                                <connections>
+                                    <action selector="touchUpInsideFavorite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RnE-i8-ZCt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ea-hC-I5G">
+                                <rect key="frame" x="24" y="24" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="ZfP-hp-NH0"/>
+                                    <constraint firstAttribute="width" constant="24" id="kON-dE-QWE"/>
+                                </constraints>
+                                <state key="normal" image="icClose"/>
+                                <connections>
+                                    <action selector="touchUpInsideClose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aNP-Xd-Osm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8ea-hC-I5G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="7aM-qC-M1A"/>
+                            <constraint firstItem="oyC-g8-auI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B9R-uM-Xmt"/>
+                            <constraint firstItem="oyC-g8-auI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Cwf-bo-C2O"/>
+                            <constraint firstItem="8ea-hC-I5G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="euL-x2-Je3"/>
+                            <constraint firstItem="a9c-fc-WW9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="fqe-oD-8nv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a9c-fc-WW9" secondAttribute="trailing" constant="24" id="jWc-rI-Wow"/>
+                            <constraint firstItem="oyC-g8-auI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ljt-f0-BbX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oyC-g8-auI" secondAttribute="bottom" id="zw7-Fx-zKS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5XV-Q7-xT8"/>
+                    <connections>
+                        <outlet property="favoriteButton" destination="a9c-fc-WW9" id="l30-6y-reE"/>
+                        <outlet property="mainImageView" destination="oyC-g8-auI" id="CmP-pD-DsV"/>
+                        <outlet property="mainImageViewHeightConstraint" destination="Kvj-LT-Rj3" id="GVq-nB-yob"/>
+                        <outlet property="mainImageViewWidthConstraint" destination="i1M-mT-DDn" id="71f-18-VPP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3475" y="194"/>
+        </scene>
+        <!--Giphy Favorite List View Controller-->
+        <scene sceneID="c7p-bP-SVl">
+            <objects>
+                <viewController id="pCS-SG-RuC" customClass="GiphyFavoriteListViewController" customModule="GiphySearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jyO-tD-uHn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N6A-ia-I8g">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GiphyListTableViewCell" id="pQz-fK-mOS" customClass="GiphyListTableViewCell" customModule="GiphySearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pQz-fK-mOS" id="rvH-5r-MYJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1GW-pj-Gt5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1GW-pj-Gt5" firstAttribute="top" secondItem="rvH-5r-MYJ" secondAttribute="top" id="Jhs-1c-NUn"/>
+                                                <constraint firstItem="1GW-pj-Gt5" firstAttribute="leading" secondItem="rvH-5r-MYJ" secondAttribute="leading" id="Qpb-Bw-4ch"/>
+                                                <constraint firstItem="1GW-pj-Gt5" firstAttribute="centerX" secondItem="rvH-5r-MYJ" secondAttribute="centerX" id="oC7-Dc-fWM"/>
+                                                <constraint firstAttribute="trailing" secondItem="1GW-pj-Gt5" secondAttribute="trailing" id="tEi-dH-JrQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="1GW-pj-Gt5" secondAttribute="bottom" id="zFf-Tp-PV6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mainImageView" destination="1GW-pj-Gt5" id="FBx-mu-O4T"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pCS-SG-RuC" id="MDO-r9-7Bk"/>
+                                    <outlet property="delegate" destination="pCS-SG-RuC" id="gax-IS-0Oe"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="N6A-ia-I8g" firstAttribute="bottom" secondItem="l4C-a9-Bkh" secondAttribute="bottom" id="BiL-bP-8Vs"/>
+                            <constraint firstItem="N6A-ia-I8g" firstAttribute="trailing" secondItem="l4C-a9-Bkh" secondAttribute="trailing" id="O66-EU-Hdz"/>
+                            <constraint firstItem="N6A-ia-I8g" firstAttribute="top" secondItem="l4C-a9-Bkh" secondAttribute="top" id="QnF-cg-O9B"/>
+                            <constraint firstItem="N6A-ia-I8g" firstAttribute="leading" secondItem="l4C-a9-Bkh" secondAttribute="leading" id="UEk-9j-cYU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l4C-a9-Bkh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Zp4-Pb-DnU"/>
+                    <connections>
+                        <outlet property="tableView" destination="N6A-ia-I8g" id="tSV-R5-j8y"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showDetail" modalPresentationStyle="fullScreen" id="gUG-yX-bnE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nsT-OY-fwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2158" y="546"/>
+        </scene>
+        <!--Giphy List View Controller-->
+        <scene sceneID="Skj-AM-B4I">
+            <objects>
+                <viewController id="MNa-Qv-7R2" customClass="GiphyListViewController" customModule="GiphySearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lMg-Ao-XX9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="찾을 이미지를 검색해주세요." translatesAutoresizingMaskIntoConstraints="NO" id="NIo-G9-yh7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="232-pi-MMo"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MNa-Qv-7R2" id="ibS-Hx-yvA"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="enL-p8-Pt8">
+                                <rect key="frame" x="0.0" y="44" width="600" height="507"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GiphyListTableViewCell" id="zwA-rU-L9S" customClass="GiphyListTableViewCell" customModule="GiphySearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zwA-rU-L9S" id="bLR-sR-T2d">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SX1-2d-mVg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="SX1-2d-mVg" secondAttribute="bottom" id="CR5-Hc-sri"/>
+                                                <constraint firstItem="SX1-2d-mVg" firstAttribute="centerX" secondItem="bLR-sR-T2d" secondAttribute="centerX" id="IjH-Dy-r00"/>
+                                                <constraint firstAttribute="trailing" secondItem="SX1-2d-mVg" secondAttribute="trailing" id="VeH-Z5-fbm"/>
+                                                <constraint firstItem="SX1-2d-mVg" firstAttribute="leading" secondItem="bLR-sR-T2d" secondAttribute="leading" id="mhe-SV-nXc"/>
+                                                <constraint firstItem="SX1-2d-mVg" firstAttribute="top" secondItem="bLR-sR-T2d" secondAttribute="top" id="tFs-Om-ta2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mainImageView" destination="SX1-2d-mVg" id="HMd-rT-WUm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MNa-Qv-7R2" id="QQe-pP-N4I"/>
+                                    <outlet property="delegate" destination="MNa-Qv-7R2" id="ivA-v2-blw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="twB-aW-Hp6" firstAttribute="bottom" secondItem="enL-p8-Pt8" secondAttribute="bottom" id="2zZ-3t-Fni"/>
+                            <constraint firstItem="NIo-G9-yh7" firstAttribute="top" secondItem="twB-aW-Hp6" secondAttribute="top" id="95P-OL-lNH"/>
+                            <constraint firstItem="enL-p8-Pt8" firstAttribute="leading" secondItem="twB-aW-Hp6" secondAttribute="leading" id="Czp-Gi-YAD"/>
+                            <constraint firstItem="NIo-G9-yh7" firstAttribute="trailing" secondItem="twB-aW-Hp6" secondAttribute="trailing" id="NIb-QU-kby"/>
+                            <constraint firstItem="twB-aW-Hp6" firstAttribute="trailing" secondItem="enL-p8-Pt8" secondAttribute="trailing" id="V46-RT-zaC"/>
+                            <constraint firstItem="NIo-G9-yh7" firstAttribute="leading" secondItem="twB-aW-Hp6" secondAttribute="leading" id="clw-Xl-n6u"/>
+                            <constraint firstItem="enL-p8-Pt8" firstAttribute="top" secondItem="NIo-G9-yh7" secondAttribute="bottom" symbolic="YES" id="yp2-7o-ALu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="twB-aW-Hp6"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="xLm-u0-eqt"/>
+                    <connections>
+                        <outlet property="searchBar" destination="NIo-G9-yh7" id="N66-hw-eMM"/>
+                        <outlet property="tableView" destination="enL-p8-Pt8" id="LDC-wW-IbX"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showDetail" modalPresentationStyle="fullScreen" id="8sT-hI-KP4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pei-hJ-0x5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2159" y="-229"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="ag3-d2-cp2">
+            <objects>
+                <tabBarController id="cgf-LC-cyS" customClass="MainTabBarController" customModule="GiphySearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lE3-gW-jnu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MNa-Qv-7R2" kind="relationship" relationship="viewControllers" id="bxd-SR-fYp"/>
+                        <segue destination="pCS-SG-RuC" kind="relationship" relationship="viewControllers" id="rVq-NE-DfL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GS1-8C-ff2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1280" y="194"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icClose" width="24" height="24"/>
+        <image name="icHeart" width="24" height="24"/>
+        <image name="icHeartFill" width="24" height="24"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8sT-hI-KP4"/>
+    </inferredMetricsTieBreakers>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_GiphySearch {
+  umbrella header "Pods-GiphySearch-umbrella.h"
+
+  export *
+  module * { export * }
+}
